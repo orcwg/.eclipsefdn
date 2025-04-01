@@ -1,10 +1,13 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('wg.orcwg', 'orcwg') {
+orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
   settings+: {
     blog: "https://orcwg.org/",
     description: "",
     name: "Open Regulatory Compliance Working Group (ORC WG)",
+    security_managers+: [
+      "wg-orcwg-security"
+    ],
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
     },
@@ -82,7 +85,7 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
         "shanda-eclipse",
         "tobie",
         "waynebeaton"
-      ]
+      ],
     },
     orgs.newTeam('team') {
       description: "Eclipse Foundation staff members supporting the ORC WG",
@@ -103,7 +106,6 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       has_wiki: false,
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('cra-hub') {
       description: "Everything you ever wanted to know about the CRA and its implementation",
@@ -111,7 +113,6 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
       homepage: "",
       squash_merge_commit_message: "PR_BODY",
       squash_merge_commit_title: "PR_TITLE",
-      web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
@@ -125,7 +126,6 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
       allow_update_branch: false,
       description: "Home of the ORC WG",
       has_wiki: false,
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('team-private') {
       allow_forking: false,
@@ -135,7 +135,6 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
       dependabot_alerts_enabled: false,
       description: "Team repository",
       private: true,
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('vulnerability-management-spec') {
       allow_merge_commit: true,
@@ -143,7 +142,6 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       private_vulnerability_reporting_enabled: true,
-      web_commit_signoff_required: false,
     },
   ],
 }
