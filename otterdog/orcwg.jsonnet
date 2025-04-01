@@ -5,9 +5,6 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
     blog: "https://orcwg.org/",
     description: "",
     name: "Open Regulatory Compliance Working Group (ORC WG)",
-    security_managers+: [
-      "wg-orcwg-security"
-    ],
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
     },
