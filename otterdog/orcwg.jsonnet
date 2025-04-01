@@ -105,17 +105,6 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
       has_wiki: false,
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('contributor-success') {
-      allow_forking: false,
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      dependabot_alerts_enabled: false,
-      description: "Track contributor onboarding",
-      has_wiki: false,
-      private: true,
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('cra-hub') {
       description: "Everything you ever wanted to know about the CRA and its implementation",
       has_wiki: false,
