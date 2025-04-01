@@ -82,8 +82,7 @@ orgs.newOrg('wg.orcwg', 'orcwg') {
         "shanda-eclipse",
         "tobie",
         "waynebeaton"
-      ],
-      privacy: "secret",
+      ]
     },
     orgs.newTeam('team') {
       description: "Eclipse Foundation staff members supporting the ORC WG",
