@@ -109,15 +109,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       has_wiki: false,
       homepage: "",
       squash_merge_commit_message: "PR_BODY",
-      squash_merge_commit_title: "PR_TITLE",
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-          requires_code_owner_reviews: true,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-      ],
+      squash_merge_commit_title: "PR_TITLE"
     },
     orgs.newRepo('orcwg') {
       allow_update_branch: false,
