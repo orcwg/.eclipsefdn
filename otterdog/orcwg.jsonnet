@@ -57,7 +57,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       description: "Working Group member affiliates",
       members+: [
         "jmaris",
-        "lfranke",
+        "lfrancke",
         "maertsen",
         "maximbaele",
         "sethmlarson",
