@@ -17,8 +17,10 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "jmaris",
         "jrico-eclipse",
         "maertsen",
+        "oej",
         "rozhukov",
         "sethmlarson",
+        "sjn",
         "tieguy",
         "timop62",
         "tobie",
@@ -111,7 +113,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       has_wiki: false,
       homepage: "",
       squash_merge_commit_message: "PR_BODY",
-      squash_merge_commit_title: "PR_TITLE"
+      squash_merge_commit_title: "PR_TITLE",
     },
     orgs.newRepo('orcwg') {
       allow_update_branch: false,
