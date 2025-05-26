@@ -68,6 +68,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
     },
     orgs.newTeam('eclipsefdn-staff') {
       members+: [
+        "autumnfound",
         "PaulWhite-Eclipse",
         "chrisguindon",
         "croundy",
