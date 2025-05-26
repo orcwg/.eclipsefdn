@@ -92,6 +92,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
     orgs.newTeam('Vulnerability Handling Task Force Leads') {
       members+: [
         "AevaOnline",
+        "bukka",
         "fungi",
         "mbarbero",
         "mrybczyn",
