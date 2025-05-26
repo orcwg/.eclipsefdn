@@ -88,6 +88,17 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "waynebeaton"
       ],
     },
+    orgs.newTeam('Vulnerability Handling Task Force Leads') {
+      members+: [
+        "AevaOnline",
+        "fungi",
+        "mbarbero",
+        "mrybczyn",
+        "rjb4standards",
+        "timop62",
+        "tobie",
+      ],
+    },
     orgs.newTeam('team') {
       description: "Eclipse Foundation staff members supporting the ORC WG",
       members+: [
