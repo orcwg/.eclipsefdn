@@ -96,6 +96,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "fungi",
         "mbarbero",
         "mrybczyn",
+        "raboof",
         "rjb4standards",
         "timop62",
         "tobie",
