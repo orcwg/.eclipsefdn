@@ -53,6 +53,21 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "timop62"
       ],
     },
+    orgs.newTeam('Cyber Resilience SIG Leads') {
+      members+: [
+        "dirkx",
+        "timop62",
+        "webmink"
+      ],
+    },
+    orgs.newTeam('Cyber Resilience Practices Project Leads') {
+      members+: [
+        "dirkx",
+        "mbarbero",
+        "timop62",
+        "webmink"
+     ],
+    },
     orgs.newTeam('WG Members') {
       description: "Working Group member affiliates",
       members+: [
