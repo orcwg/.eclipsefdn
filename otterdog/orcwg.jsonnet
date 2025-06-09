@@ -99,6 +99,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "oej",
         "raboof",
         "rjb4standards",
+        "salkimmich",
         "timop62",
         "tobie",
       ],
