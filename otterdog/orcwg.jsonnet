@@ -100,6 +100,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "paulbuck",
         "phkrief",
         "shanda-eclipse",
+        "gnugomez",
         "tobie",
         "waynebeaton"
       ],
