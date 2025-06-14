@@ -33,6 +33,15 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "tobie"
       ],
     },
+    orgs.newTeam('Open Source Hardware Task Force') {
+      members+: [
+        "allisonrandal",
+        "fungi",
+        "javier-serrano-pareja ",
+        "MikeOpenHWGroup",
+        "tobie"
+      ],
+    },
     orgs.newTeam('Specification Committee') {
       description: "ORC WG Specification Committee",
       members+: [
