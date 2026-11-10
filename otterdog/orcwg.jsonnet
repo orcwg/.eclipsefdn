@@ -221,7 +221,6 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       description: "Management of the cra-hub infrastructure",
       members+: [
         "jrico-eclipse",
-        "ninnlangel",
         "tobie"
       ],
     },
