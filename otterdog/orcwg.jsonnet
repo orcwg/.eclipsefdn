@@ -149,11 +149,12 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
     orgs.newTeam('Steering Committee') {
       description: "ORC WG Steering Committee",
       members+: [
+        "SecurityCaveman",
         "Viko-legal",
         "aosull01",
         "dirkx",
         "mm73628486283",
-        "rdicosmo",
+        "oej",
         "rozhukov",
         "timop62"
       ],
@@ -176,6 +177,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
     orgs.newTeam('WG Members') {
       description: "Working Group member affiliates",
       members+: [
+        "SecurityCaveman",
         "Viko-legal",
         "aosull01",
         "brianf",
@@ -187,7 +189,7 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "maertsen",
         "maximbaele",
         "mm73628486283",
-        "rdicosmo",
+        "oej",
         "rozhukov",
         "sethmlarson",
         "timop62",
@@ -209,6 +211,24 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "jrico-eclipse"
       ],
     },
+    orgs.newTeam('cra-due-diligence') {
+      description: "Community group actively contributing to the due diligence discussions with ability to approve PRs",
+      members+: [
+        "AevaOnline",
+        "CsatariGergely",
+        "MathiasSchindler",
+        "SecurityCaveman",
+        "ahw59",
+        "atalsma",
+        "gkunz",
+        "jrico-eclipse",
+        "markt-asf",
+        "oej",
+        "openrefactorymunawar",
+        "sjn",
+        "timop62"
+      ],
+    },
     orgs.newTeam('cra-due-diligence-lead') {
       description: "People with full access to the due diligence repository based on their role in the task force",
       members+: [
@@ -226,12 +246,13 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
     },
     orgs.newTeam('eclipsefdn-staff') {
       members+: [
-        "JoeTot",
         "PaulWhite-Eclipse",
         "autumnfound",
         "chrisguindon",
         "croundy",
+        "cstamas",
         "eclipsewebmaster",
+        "ef-joseph",
         "ericpoirier",
         "fdesbiens",
         "fredg02",
@@ -239,12 +260,14 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
         "gnugomez",
         "hansmuff2",
         "heurtematte",
+        "jjmerchante",
+        "jrico-eclipse",
         "manpreetkaur-arch",
         "mbarbero",
         "netomi",
-        "oliviergoulet5",
+        "shabnammayel",
         "shanda-eclipse",
-        "tobie",
+        "skettkepalli",
         "waynebeaton"
       ],
       privacy: "secret",
@@ -254,10 +277,11 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       members+: [
         "SharonCorbett",
         "abuango",
+        "ciaran-eile",
         "gaelblondelle",
+        "javiervalino",
         "jrico-eclipse",
         "mbarbero",
-        "mrybczyn",
         "shanda-eclipse",
         "tobie"
       ],
@@ -269,6 +293,10 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       has_wiki: false,
+      team_permissions+: {
+        "steering-committee": "push",
+        "team": "push",
+      },
       variables: [
         orgs.newRepoVariable('NEWSROOM_API_URL') {
           value: "https://newsroom.eclipse.org/api/events?page=1&pagesize=5&parameters%5Bpublish_to%5D=orc&parameters%5Bupcoming_only%5D=1&options%5Borderby%5D%5Bfield_event_date%5D=ASC",
@@ -282,16 +310,38 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       description: "This project aims to create a practical framework that helps manufacturers meet their due diligence obligations when using open source software, without adding burden to maintainers. By introducing voluntary security attestations, it seeks to strengthen FOSS security, sustainability, and collaboration with authorities and industry actors.",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
+      team_permissions+: {
+        "cra-attestations": "admin",
+      },
     },
     orgs.newRepo('cra-due-diligence') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      description: "CRA Due Diligence Whitepaper",
       gh_pages_build_type: "workflow",
       has_discussions: true,
       has_wiki: false,
+      homepage: "https://orcwg.github.io/cra-due-diligence/",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
+      topics+: [
+        "cra",
+        "orc-wg"
+      ],
+      team_permissions+: {
+        "cra-due-diligence": "maintain",
+        "cra-due-diligence-lead": "admin",
+      },
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          allows_creations: true,
+          include_refs+: [
+            "~DEFAULT_BRANCH"
+          ],
+          required_status_checks: null,
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -307,6 +357,23 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       homepage: "",
       squash_merge_commit_message: "PR_BODY",
       squash_merge_commit_title: "PR_TITLE",
+      team_permissions+: {
+        "cen-cenelec-wg-9": "triage",
+        "cra-expert-group": "triage",
+        "cra-hub": "push",
+        "cyber-resilience-sig": "triage",
+        "cyber-resilience-sig-leads": "triage",
+        "etsi-cyber-eusr": "triage",
+        "external-stakeholder-coordination": "triage",
+        "faq-tf": "push",
+        "inventory-tf": "push",
+        "open-source-hardware-tf": "triage",
+        "specification-committee": "triage",
+        "steering-committee": "triage",
+        "team": "push",
+        "vulnerability-handling-tf": "triage",
+        "wg-members": "triage",
+      },
       secrets: [
         orgs.newRepoSecret('WEBSITE_DISPATCH_TOKEN') {
           value: "********",
@@ -325,6 +392,9 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       secret_scanning_push_protection: "disabled",
       squash_merge_commit_message: "PR_BODY",
       squash_merge_commit_title: "PR_TITLE",
+      team_permissions+: {
+        "cra-hub": "admin",
+      },
       rulesets: [
         orgs.newRepoRuleset('Protect default branch') {
           allows_creations: true,
@@ -352,6 +422,22 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       allow_update_branch: false,
       description: "Home of the ORC WG",
       has_wiki: false,
+      team_permissions+: {
+        "cen-cenelec-wg-9": "triage",
+        "cra-expert-group": "triage",
+        "cyber-resilience-sig": "triage",
+        "cyber-resilience-sig-leads": "triage",
+        "etsi-cyber-eusr": "triage",
+        "external-stakeholder-coordination": "triage",
+        "faq-tf": "triage",
+        "inventory-tf": "triage",
+        "open-source-hardware-tf": "triage",
+        "specification-committee": "push",
+        "steering-committee": "push",
+        "team": "push",
+        "vulnerability-handling-tf": "triage",
+        "wg-members": "triage",
+      },
     },
     orgs.newRepo('team-private') {
       allow_forking: false,
@@ -361,6 +447,10 @@ orgs.newOrg('foundation-internal.wg.orc', 'orcwg') {
       dependabot_alerts_enabled: false,
       description: "Team repository",
       private: true,
+      team_permissions+: {
+        "eclipsefdn-staff": "triage",
+        "team": "maintain",
+      },
     },
     orgs.newRepo('vulnerability-management-spec') {
       allow_merge_commit: true,
